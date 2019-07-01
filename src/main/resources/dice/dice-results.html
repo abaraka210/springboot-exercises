@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang ="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+    <!--
+   * This page should display a random number (the dice roll),
+   * the user's guess, and a message based on whether or not they
+   * guessed the correct number.
+    -->
+    <h1>Results</h1>
+    <!-- Thymeleaf will automatically escape the variable inside of a th:text-->
+    <h3>User's guess: <span th:remove="tag" th:text="${guess}"></span></h3>
+<h3> Dice roll: <span th:remove="tag" th:text="${roll}"></span></h3>
+<h3>
+    Results:
+    <span th:remove="tag" th:if="${result}" th:text="${'You guessed the correct number! '}"></span>
+    <span th:remove="tag" th:if="${!result}" th:text="${'You guessed the wrong number :('}"></span>
+    <!--         using switch case -->
+    <!--        <span th:remove="tag" th:switch="${result}">-->
+    <!--            <span th:remove="tag" th:case="true" th:text="${'You won!'}"></span>-->
+    <!--            <span th:remove="tag" th:case="false" th:text="${'You lost :('}"></span>-->
+    <!--        </span>-->
+</h3>
+
 
 </body>
 </html>

@@ -21,16 +21,19 @@ public class PostController {
     public String index(){
         return "List of posts...";
     }
+
     @GetMapping("/posts/{id}")
     @ResponseBody
     public String show(@PathVariable long id){
         return "Displaying post: " + id;
     }
+
     @GetMapping("/posts/create")
     @ResponseBody
     public String create(){
         return "Displaying create post";
     }
+
     @GetMapping("/posts/create")
     @ResponseBody
     public void insert(){
